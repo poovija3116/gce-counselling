@@ -1,0 +1,11 @@
+node_modules/
+backend/node_modules/
+
+.env
+backend/.env
+
+dist/
+
+*.log
+npm-debug.log*
+backend.zip

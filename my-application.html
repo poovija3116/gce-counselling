@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GCE Erode - My Application</title>
+
+    <link rel="stylesheet" href="my-application.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="header">
+
+            <h1>GCE ERODE</h1>
+
+            <h2>MANAGEMENT COUNSELLING 2026</h2>
+
+            <p>MY APPLICATION</p>
+
+        </header>
+
+
+        <!-- Application Details -->
+        <section class="application-card">
+
+            <h3>APPLICATION DETAILS</h3>
+
+            <div class="details">
+
+                <div class="detail-row">
+                    <span>Application ID</span>
+                    <strong>GCE2026XXXX</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Application Status</span>
+                    <strong class="status">Submitted</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Student Details -->
+        <section class="application-card">
+
+            <h3>STUDENT DETAILS</h3>
+
+            <div class="details">
+
+                <div class="detail-row">
+                    <span>Name</span>
+                    <strong>Student Name</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Date of Birth</span>
+                    <strong>DD/MM/YYYY</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Community</span>
+                    <strong>BC</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Rank</span>
+                    <strong>XXXXX</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Back Button -->
+        <div class="back-container">
+
+            <button id="backButton">
+                ← BACK
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Internal JavaScript -->
+    <script>
+
+        document.getElementById("backButton").addEventListener("click", function () {
+
+            history.back();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

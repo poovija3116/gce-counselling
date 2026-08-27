@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GCE Erode - Login</title>
+
+    <link
+        rel="stylesheet"
+        href="student-login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="login-page">
+
+
+        <!-- ==========================================
+             COLLEGE HEADER
+        =========================================== -->
+
+        <div class="college-header">
+
+            <h1>
+                GCE ERODE
+            </h1>
+
+            <img
+                src="logo.jpeg"
+                alt="GCE Erode Logo"
+            >
+
+            <h2>
+                MANAGEMENT COUNSELLING
+            </h2>
+
+            <p>
+                2026
+            </p>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             LOGIN CARD
+        =========================================== -->
+
+        <div class="login-card">
+
+            <h3>
+                LOGIN
+            </h3>
+
+
+            <!-- ======================================
+                 LOGIN FORM
+            ======================================= -->
+
+            <form id="loginForm">
+
+
+                <!-- ROLE -->
+
+                <label for="loginRole">
+                    Select Role
+                </label>
+
+                <select id="loginRole">
+
+                    <option value="">
+                        Select Role
+                    </option>
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="counsellor">
+                        Counsellor
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+
+
+                <!-- USERNAME -->
+
+                <label for="username">
+                    Username / ID
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username or ID"
+                    autocomplete="username"
+                >
+
+
+
+                <!-- PASSWORD -->
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePasswordButton"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    LOGIN
+                </button>
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <p id="loginMessage"></p>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         LOGIN JAVASCRIPT
+         
+         student-login.js handles:
+         - Student login
+         - Admin login
+         - Counsellor login
+         - JWT token
+         - Redirect
+    =========================================== -->
+
+    <script src="student-login.js"></script>
+
+
+</body>
+
+</htm

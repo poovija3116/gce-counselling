@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Announcement Management - GCE Erode
+    </title>
+
+    <link rel="stylesheet"
+          href="announcement.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="announcement-header">
+
+        <h1>
+            GOVERNMENT COLLEGE OF ENGINEERING, ERODE-638316
+        </h1>
+
+        <p>
+            ACADEMIC SUPPORT CELL
+        </p>
+
+        <div class="title-bar">
+            ANNOUNCEMENT MANAGEMENT
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="announcement-container">
+
+        <section class="page-heading">
+
+            <span>
+                ADMIN CONTROL
+            </span>
+
+            <h2>
+                Publish Announcement
+            </h2>
+
+            <p>
+                Create an announcement that will be displayed
+                on the student main page.
+            </p>
+
+        </section>
+
+
+        <!-- ANNOUNCEMENT BOX -->
+
+        <section class="announcement-panel">
+
+            <label for="announcementInput">
+                ANNOUNCEMENT MESSAGE
+            </label>
+
+            <textarea
+                id="announcementInput"
+                placeholder="Type your announcement here...">
+            </textarea>
+
+
+            <div class="announcement-actions">
+
+                <button
+                    type="button"
+                    id="publishButton">
+
+                    PUBLISH ANNOUNCEMENT
+
+                </button>
+
+                <button
+                    type="button"
+                    id="clearButton">
+
+                    CLEAR
+
+                </button>
+
+            </div>
+
+
+            <p
+                id="announcementStatus"
+                class="status">
+            </p>
+
+        </section>
+
+
+        <!-- PREVIEW -->
+
+        <section class="preview-panel">
+
+            <div class="preview-heading">
+
+                <span>
+                    LIVE PREVIEW
+                </span>
+
+                <h3>
+                    Student Main Page
+                </h3>
+
+            </div>
+
+
+            <div class="preview-bar">
+
+                <strong>
+                    📢 ANNOUNCEMENT
+                </strong>
+
+                <div class="preview-text">
+                    <span id="previewText">
+                        Your announcement will appear here.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK BUTTON -->
+
+        <button
+            class="back-button"
+            onclick="history.back()">
+
+            ← BACK
+
+        </button>
+
+    </main>
+
+
+    <script src="announcement.js"></script>
+
+</body>
+
+</html>

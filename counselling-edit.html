@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Counselling Details</title>
+
+    <link
+        rel="stylesheet"
+        href="counselling-edit.css">
+
+</head>
+
+
+<body>
+
+    <header class="page-header">
+
+        <h1>
+            GOVERNMENT COLLEGE OF ENGINEERING, ERODE-638316
+        </h1>
+
+        <h2>
+            ACADEMIC SUPPORT CELL
+        </h2>
+
+        <div class="title-bar">
+            MANAGE COUNSELLING DETAILS
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- SCHEDULE -->
+
+        <section class="edit-card">
+
+            <h2>
+                Counselling Schedule
+            </h2>
+
+            <label>
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="counsellingDate">
+
+
+            <label>
+                Time
+            </label>
+
+            <input
+                type="text"
+                id="counsellingTime"
+                placeholder="Example: 10:00 AM - 4:00 PM">
+
+        </section>
+
+
+
+        <!-- ANNOUNCEMENT -->
+
+        <section class="edit-card">
+
+            <h2>
+                Announcement
+            </h2>
+
+            <textarea
+                id="announcement"
+                rows="4"
+                placeholder="Enter counselling announcement...">
+            </textarea>
+
+        </section>
+
+
+
+        <!-- DOCUMENTS -->
+
+        <section class="edit-card">
+
+            <h2>
+                Required Documents
+            </h2>
+
+            <textarea
+                id="documents"
+                rows="6"
+                placeholder="Enter required documents...">
+            </textarea>
+
+        </section>
+
+
+
+        <!-- GUIDELINES -->
+
+        <section class="edit-card">
+
+            <h2>
+                Guidelines
+            </h2>
+
+            <textarea
+                id="guidelines"
+                rows="6"
+                placeholder="Enter counselling guidelines...">
+            </textarea>
+
+        </section>
+
+
+
+        <!-- SAVE -->
+
+        <div class="button-area">
+
+            <button
+                type="button"
+                id="saveDetails">
+
+                SAVE CHANGES
+
+            </button>
+
+
+            <button
+                type="button"
+                id="backButton">
+
+                BACK
+
+            </button>
+
+        </div>
+
+
+        <p
+            id="saveMessage"
+            class="save-message">
+        </p>
+
+
+    </main>
+
+
+    <script src="counselling-edit.js"></script>
+
+</body>
+
+</html>

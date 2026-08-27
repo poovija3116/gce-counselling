@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f8f4;
+    color: #315c3b;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.announcement-header {
+    text-align: center;
+    background: #ffffff;
+    border-bottom: 1px solid #c9ddcc;
+    padding-top: 22px;
+}
+
+.announcement-header h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #285c37;
+}
+
+.announcement-header p {
+    margin: 6px 0 16px;
+    font-size: 13px;
+    color: #6b806f;
+    letter-spacing: 1px;
+}
+
+.title-bar {
+    background: #326d40;
+    color: white;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+.announcement-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 35px auto 50px;
+}
+
+
+/* ==============================
+   PAGE HEADING
+============================== */
+
+.page-heading {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #d1e1d3;
+    border-radius: 14px;
+    padding: 28px 20px;
+    margin-bottom: 22px;
+}
+
+.page-heading span {
+    color: #6d8972;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.page-heading h2 {
+    margin: 8px 0;
+    color: #285c37;
+    font-size: 23px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: #718076;
+    font-size: 11px;
+}
+
+
+/* ==============================
+   ANNOUNCEMENT PANEL
+============================== */
+
+.announcement-panel {
+    background: #ffffff;
+    border: 1px solid #d1e1d3;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 22px;
+}
+
+.announcement-panel label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #285c37;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.announcement-panel textarea {
+    width: 100%;
+    min-height: 150px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: 1px solid #c9ddcc;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #315c3b;
+    background: #fbfdfb;
+}
+
+.announcement-panel textarea:focus {
+    border-color: #326d40;
+    box-shadow: 0 0 0 3px rgba(50, 109, 64, 0.08);
+}
+
+
+/* ==============================
+   ACTION BUTTONS
+============================== */
+
+.announcement-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.announcement-actions button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#publishButton {
+    background: #326d40;
+    color: white;
+}
+
+#publishButton:hover {
+    background: #285c37;
+    transform: translateY(-2px);
+}
+
+#clearButton {
+    background: #e7f1e8;
+    color: #326d40;
+}
+
+#clearButton:hover {
+    background: #d9eadb;
+}
+
+
+/* ==============================
+   STATUS
+============================== */
+
+.status {
+    margin: 12px 0 0;
+
+    color: #326d40;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   PREVIEW PANEL
+============================== */
+
+.preview-panel {
+    background: #ffffff;
+    border: 1px solid #d1e1d3;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.preview-heading span {
+    color: #6d8972;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.preview-heading h3 {
+    margin: 7px 0 18px;
+
+    color: #285c37;
+    font-size: 16px;
+}
+
+
+/* ==============================
+   PREVIEW BAR
+============================== */
+
+.preview-bar {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #e8f5e9;
+
+    border: 1px solid #c9ddcc;
+    border-radius: 8px;
+}
+
+.preview-bar strong {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+
+    background: #326d40;
+    color: white;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.preview-text {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.preview-text span {
+    display: inline-block;
+
+    padding-left: 20px;
+
+    color: #285c37;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   BACK BUTTON
+============================== */
+
+.back-button {
+    display: block;
+
+    margin: 0 auto;
+
+    padding: 11px 25px;
+
+    background: white;
+
+    border: 1px solid #c9ddcc;
+    border-radius: 8px;
+
+    color: #326d40;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.back-button:hover {
+    background: #e8f5e9;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 650px) {
+
+    .announcement-container {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    .announcement-header h1 {
+        font-size: 14px;
+    }
+
+    .announcement-header p {
+        font-size: 11px;
+    }
+
+    .page-heading h2 {
+        font-size: 19px;
+    }
+
+    .announcement-panel {
+        padding: 20px;
+    }
+
+    .announcement-actions {
+        flex-direction: column;
+    }
+
+    .announcement-actions button {
+        width: 100%;
+    }
+
+    .preview-bar {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .preview-bar strong {
+        height: 38px;
+        justify-content: center;
+    }
+
+    .preview-text {
+        padding: 12px;
+    }
+
+}

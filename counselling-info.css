@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef8f0;
+    color: #164d2b;
+}
+
+
+/* Main Page */
+
+.page {
+    width: 90%;
+    max-width: 950px;
+    margin: auto;
+    padding: 45px 0;
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.header h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+
+/* Information Cards */
+
+.info-card {
+    background: white;
+    padding: 28px;
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.info-card h3 {
+    font-size: 19px;
+    margin-bottom: 22px;
+}
+
+
+/* Schedule */
+
+.schedule p {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #e1e8e3;
+}
+
+.schedule p:last-child {
+    border-bottom: none;
+}
+
+.schedule strong {
+    font-size: 15px;
+}
+
+.schedule span {
+    color: #4d6655;
+}
+
+
+/* Counselling Process */
+
+.process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step {
+    text-align: center;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #2f7d46;
+    color: white;
+
+    font-weight: bold;
+}
+
+.step p {
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.arrow {
+    font-size: 24px;
+    margin: 7px 0;
+
+    color: #2f7d46;
+}
+
+
+/* Instructions */
+
+.info-card ul {
+    padding-left: 22px;
+}
+
+.info-card li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* Back Button */
+
+.back-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-container button {
+    padding: 12px 30px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2f7d46;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.back-container button:hover {
+    background: #256638;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .page {
+        width: 92%;
+        padding: 30px 0;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+    }
+
+    .info-card {
+        padding: 22px;
+    }
+
+    .schedule p {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Round Management - GCE Erode</title>
+
+    <link rel="stylesheet"
+          href="round-management.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <h1>
+            GOVERNMENT COLLEGE OF ENGINEERING, ERODE-638316
+        </h1>
+
+        <p>
+            ACADEMIC SUPPORT CELL
+        </p>
+
+        <div class="header-bar">
+            COUNSELLING ROUND MANAGEMENT
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="intro-card">
+
+            <div class="intro-text">
+
+                <span>
+                    COUNSELLING CONTROL
+                </span>
+
+                <h2>
+                    Round Configuration
+                </h2>
+
+                <p>
+                    Configure the number of counselling rounds
+                    and assign rank ranges to each round.
+                </p>
+
+            </div>
+
+
+            <div class="status-card">
+
+                <span>
+                    COUNSELLING STATUS
+                </span>
+
+                <strong>
+                    ● ACTIVE
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ROUND SETTINGS -->
+
+        <section class="settings-card">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <h3>
+                        Round Settings
+                    </h3>
+
+                    <p>
+                        Decide how many students should be covered
+                        in each counselling round.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NUMBER OF ROUNDS -->
+
+            <div class="round-count">
+
+                <label for="numberOfRounds">
+                    NUMBER OF ROUNDS
+                </label>
+
+                <div class="count-row">
+
+                    <input
+                        type="number"
+                        id="numberOfRounds"
+                        min="1"
+                        max="20"
+                        value="5">
+
+                    <button
+                        type="button"
+                        id="generateRoundsButton">
+
+                        GENERATE ROUNDS
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ROUND LIST -->
+
+            <div
+                id="roundContainer"
+                class="round-container">
+
+
+                <!-- ROUND 1 -->
+
+                <div class="round-card">
+
+                    <div class="round-number">
+                        ROUND 01
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="1">
+
+                    </div>
+
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="100">
+
+                    </div>
+
+
+                    <div id="roundContainer" class="round-container">
+</div>
+
+                </div>
+
+
+
+                <!-- ROUND 2 -->
+
+                <div class="round-card">
+
+                    <div class="round-number">
+                        ROUND 02
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="101">
+
+                    </div>
+
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="200">
+
+                    </div>
+
+
+                    <div id="roundContainer" class="round-container">
+</div>
+                </div>
+
+
+
+                <!-- ROUND 3 -->
+
+                <div class="round-card">
+
+                    <div class="round-number">
+                        ROUND 03
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="201">
+
+                    </div>
+
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="300">
+
+                    </div>
+
+
+                    <div id="roundContainer" class="round-container">
+</div>
+
+                </div>
+
+
+
+                <!-- ROUND 4 -->
+
+                <div class="round-card">
+
+                    <div class="round-number">
+                        ROUND 04
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="301">
+
+                    </div>
+
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="400">
+
+                    </div>
+
+
+                  <div id="roundContainer" class="round-container">
+</div>
+                </div>
+
+
+
+                <!-- ROUND 5 -->
+
+                <div class="round-card">
+
+                    <div class="round-number">
+                        ROUND 05
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="401">
+
+                    </div>
+
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="500">
+
+                    </div>
+
+
+                    <div id="roundContainer" class="round-container">
+                    </div>
+</div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SAVE -->
+
+            <div class="save-area">
+
+                <p id="saveMessage"></p>
+
+                <button
+                    type="button"
+                    id="saveRoundsButton"
+                    class="save-button">
+
+                    SAVE ROUND SETTINGS
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- CURRENT ROUND -->
+
+        <section class="current-round-card">
+
+            <div>
+
+                <span>
+                    CURRENTLY ACTIVE ROUND
+                </span>
+
+                <h2>
+                    ROUND 01
+                </h2>
+
+                <p>
+                    Students with ranks 1–100
+                    are currently being processed.
+                </p>
+
+            </div>
+
+
+            <div class="current-status">
+
+                <span>
+                    ● LIVE
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STUDENT INFORMATION -->
+
+        <section class="info-card">
+
+            <div class="info-icon">
+                i
+            </div>
+
+            <div>
+
+                <h3>
+                    How Round Assignment Works
+                </h3>
+
+                <p>
+                    A student's counselling round is automatically
+                    determined from their rank. Students cannot
+                    select or change their own round.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script>
+
+        const numberOfRounds =
+            document.getElementById("numberOfRounds");
+
+        const generateButton =
+            document.getElementById("generateRoundsButton");
+
+        const roundContainer =
+            document.getElementById("roundContainer");
+
+        const saveButton =
+            document.getElementById("saveRoundsButton");
+
+        const saveMessage =
+            document.getElementById("saveMessage");
+
+
+        generateButton.addEventListener("click", function () {
+
+            const count =
+                parseInt(numberOfRounds.value);
+
+            if (!count || count < 1) {
+                return;
+            }
+
+            roundContainer.innerHTML = "";
+
+            let startRank = 1;
+
+            const studentsPerRound = 100;
+
+
+            for (let i = 1; i <= count; i++) {
+
+                const endRank =
+                    startRank + studentsPerRound - 1;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className = "round-card";
+
+
+                card.innerHTML = `
+
+                    <div class="round-number">
+                        ROUND ${String(i).padStart(2, "0")}
+                    </div>
+
+                    <div class="rank-input">
+
+                        <label>
+                            FROM RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="${startRank}">
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                    <div class="rank-input">
+
+                        <label>
+                            TO RANK
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            value="${endRank}">
+
+                    </div>
+
+                    <div class="student-count">
+
+                        <span>
+                            STUDENTS
+                        </span>
+
+                        <strong>
+                            ${studentsPerRound}
+                        </strong>
+
+                    </div>
+
+                `;
+
+
+                roundContainer.appendChild(card);
+
+
+                startRank = endRank + 1;
+
+            }
+
+        });
+
+
+        saveButton.addEventListener("click", function () {
+
+            saveMessage.textContent =
+                "✓ Round settings saved successfully.";
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

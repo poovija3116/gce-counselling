@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Counsellor Portal - GCE Erode</title>
+
+    <link
+        rel="stylesheet"
+        href="counseller-main.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="counsellor-header">
+
+        <h1>
+            GOVERNMENT COLLEGE OF ENGINEERING, ERODE-638316
+        </h1>
+
+        <h2>
+            ACADEMIC SUPPORT CELL
+        </h2>
+
+        <div class="title-bar">
+            COUNSELLOR PORTAL
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="counsellor-container">
+
+
+        <section class="welcome-section">
+
+            <span>
+                COUNSELLING CONTROL
+            </span>
+
+            <h2>
+                Management Counselling 2026
+            </h2>
+
+            <p>
+                Control and manage the counselling process.
+            </p>
+
+        </section>
+
+
+
+        <!-- COUNSELLING CONTROL -->
+
+        <section class="control-card">
+
+            <div class="control-info">
+
+                <span>
+                    LIVE STATUS
+                </span>
+
+                <h3 id="controlStatus">
+                    COUNSELLING OFF
+                </h3>
+
+                <p id="controlMessage">
+                    Counselling is currently stopped.
+                </p>
+
+            </div>
+
+
+            <button
+                id="controlButton"
+                class="control-button off"
+                type="button">
+
+                TURN ON
+
+            </button>
+
+        </section>
+
+
+
+        <!-- NAVIGATION BUTTONS -->
+
+        <section class="counsellor-actions">
+
+
+            <button
+                class="portal-button"
+                type="button"
+                onclick="window.location.href='admin.html'">
+
+                <span class="button-number">
+                    01
+                </span>
+
+                <div class="button-icon">
+                    A
+                </div>
+
+                <div class="button-content">
+
+                    <h3>
+                        ADMIN PORTAL
+                    </h3>
+
+                    <p>
+                        Access administration controls
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="portal-button"
+                type="button"
+                onclick="window.location.href='counselling-officer.html'">
+
+                <span class="button-number">
+                    02
+                </span>
+
+                <div class="button-icon">
+                    C
+                </div>
+
+                <div class="button-content">
+
+                    <h3>
+                        COUNSELLING OFFICER
+                    </h3>
+
+                    <p>
+                        Manage student counselling
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+            <a
+    href="counselling-edit.html"
+    class="portal-button">
+
+    <span class="button-number">
+        03
+    </span>
+
+    <div class="button-icon">
+        A
+    </div>
+
+    <div class="button-content">
+
+        <h3>
+            ANNOUNCEMENTS
+        </h3>
+
+        <p>
+            Manage counselling announcements
+        </p>
+
+    </div>
+
+    <span class="arrow">
+        →
+    </span>
+
+</a>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="counseller-main.js"></script>
+
+</body>
+
+</html>

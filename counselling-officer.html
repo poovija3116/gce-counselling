@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        GCE Erode | Counselling Officer
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="counselling-officer.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="officer-header">
+
+        <div class="college-brand">
+
+            <div class="logo-box">
+                GCE
+            </div>
+
+            <div>
+
+                <h1>
+                    GCE ERODE
+                </h1>
+
+                <p>
+                    Management Counselling 2026
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="officer-info">
+
+            <div>
+
+                <span>
+                    LOGGED IN AS
+                </span>
+
+                <strong>
+                    COUNSELLING OFFICER
+                </strong>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="officer-container">
+
+
+        <!-- =========================
+             PAGE TITLE
+        ========================== -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <span>
+                    LIVE COUNSELLING
+                </span>
+
+                <h2>
+                    Counselling Control Panel
+                </h2>
+
+                <p>
+                    Review student preferences and
+                    allot available seats.
+                </p>
+
+            </div>
+
+
+            <div class="counselling-status">
+
+                <span class="status-dot"></span>
+
+                COUNSELLING ACTIVE
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CURRENT RANK
+        ========================== -->
+
+        <section class="rank-control">
+
+            <div class="rank-info">
+
+                <span>
+                    CURRENT COUNSELLING RANK
+                </span>
+
+                <strong id="currentRank">
+                    1
+                </strong>
+
+                <p>
+                    Students are processed according
+                    to their assigned rank.
+                </p>
+
+            </div>
+
+
+            <div class="rank-actions">
+
+                <button
+                    id="previousRank"
+                    class="secondary-button">
+
+                    ← Previous
+
+                </button>
+
+
+                <button
+                    id="nextRank"
+                    class="primary-button">
+
+                    Next Student →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CURRENT STUDENT
+        ========================== -->
+
+        <section class="student-section">
+
+            <div class="section-title">
+
+                <span>
+                    CURRENT STUDENT
+                </span>
+
+                <h3>
+                    Student Details
+                </h3>
+
+            </div>
+
+
+            <div class="student-details">
+
+
+                <div class="detail-box">
+
+                    <span>
+                        RANK
+                    </span>
+
+                    <strong id="studentRank">
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>
+                        STUDENT NAME
+                    </span>
+
+                    <strong id="studentName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>
+                        APPLICATION NUMBER
+                    </span>
+
+                    <strong id="applicationNumber">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>
+                        CATEGORY
+                    </span>
+
+                    <strong id="studentCategory">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STUDENT PREFERENCES
+        ========================== -->
+
+        <section class="preferences-section">
+
+            <div class="section-title">
+
+                <span>
+                    STUDENT REQUEST
+                </span>
+
+                <h3>
+                    Department Preferences
+                </h3>
+
+                <p>
+                    Preferences submitted by the student.
+                </p>
+
+            </div>
+
+
+            <div class="preference-list">
+
+
+                <div class="preference-row">
+
+                    <div class="priority">
+                        01
+                    </div>
+
+                    <div class="department">
+                        CSE
+                    </div>
+
+                    <div class="preference-status available">
+                        AVAILABLE
+                    </div>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div class="priority">
+                        02
+                    </div>
+
+                    <div class="department">
+                        IT
+                    </div>
+
+                    <div class="preference-status available">
+                        AVAILABLE
+                    </div>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div class="priority">
+                        03
+                    </div>
+
+                    <div class="department">
+                        ECE
+                    </div>
+
+                    <div class="preference-status full">
+                        SEAT FULL
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEAT AVAILABILITY
+        ========================== -->
+
+        <section class="seat-section">
+
+            <div class="section-title">
+
+                <span>
+                    LIVE SEAT DATA
+                </span>
+
+                <h3>
+                    Seat Availability
+                </h3>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Total Seats
+                            </th>
+
+                            <th>
+                                Occupied
+                            </th>
+
+                            <th>
+                                Vacancy
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                CSE
+                            </td>
+
+                            <td>
+                                60
+                            </td>
+
+                            <td>
+                                58
+                            </td>
+
+                            <td class="vacancy">
+                                2
+                            </td>
+
+                            <td>
+                                <span class="seat-available">
+                                    AVAILABLE
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                IT
+                            </td>
+
+                            <td>
+                                60
+                            </td>
+
+                            <td>
+                                56
+                            </td>
+
+                            <td class="vacancy">
+                                4
+                            </td>
+
+                            <td>
+                                <span class="seat-available">
+                                    AVAILABLE
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                ECE
+                            </td>
+
+                            <td>
+                                60
+                            </td>
+
+                            <td>
+                                60
+                            </td>
+
+                            <td class="vacancy zero">
+                                0
+                            </td>
+
+                            <td>
+                                <span class="seat-full">
+                                    FULL
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ALLOTMENT ACTION
+        ========================== -->
+
+        <section class="allotment-section">
+
+            <div>
+
+                <span>
+                    FINAL ACTION
+                </span>
+
+                <h3>
+                    Seat Allotment
+                </h3>
+
+                <p>
+                    Select an available preference
+                    and confirm the allotment.
+                </p>
+
+            </div>
+
+
+            <div class="allotment-actions">
+
+                <button
+                    id="skipStudent"
+                    class="skip-button">
+
+                    Skip Student
+
+                </button>
+
+
+                <button
+                    id="allotSeat"
+                    class="allot-button">
+
+                    Accept & Allot Seat
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         CONFIRMATION MODAL
+    ========================== -->
+
+    <div
+        id="confirmationModal"
+        class="modal">
+
+        <div class="modal-box">
+
+            <div class="modal-icon">
+                ✓
+            </div>
+
+            <h3>
+                Confirm Seat Allotment
+            </h3>
+
+            <p id="confirmationMessage">
+
+                Confirm seat allotment?
+
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    id="cancelModal"
+                    class="secondary-button">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    id="confirmModal"
+                    class="primary-button">
+
+                    Confirm Allotment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="counselling-officer.js"></script>
+
+</body>
+
+</html>
