@@ -194,7 +194,12 @@ async function login(username, password, role) {
                 window.location.href =
                     "admin-main.html";
 
-            }
+            }else if (role === "counsellor") {
+
+    window.location.href =
+        "counsellor-dashboard.html";
+
+}
 
         }, 700);
 
