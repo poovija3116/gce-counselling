@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Round Management - GCE Erode</title>
+    <title>Round Management | GCE Erode</title>
 
     <link rel="stylesheet"
           href="round-management.css">
@@ -19,579 +19,900 @@
 <body>
 
 
-    <!-- HEADER -->
+<!-- =========================================================
+     LAYOUT
+========================================================= -->
 
-    <header class="page-header">
+<div class="app-layout">
 
-        <h1>
-            GOVERNMENT COLLEGE OF ENGINEERING, ERODE-638316
-        </h1>
 
-        <p>
-            ACADEMIC SUPPORT CELL
-        </p>
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
 
-        <div class="header-bar">
-            COUNSELLING ROUND MANAGEMENT
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                GCE
+            </div>
+
+            <div>
+                <h2>GCE ERODE</h2>
+                <span>Academic Support Cell</span>
+            </div>
+
         </div>
 
-    </header>
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-label">
+                COUNSELLING
+            </p>
+
+            <a href="#" class="sidebar-link active">
+
+                <span class="sidebar-icon">▦</span>
+
+                Round Management
+
+            </a>
 
 
+            <a href="counsellor-dashboard.html"
+               class="sidebar-link">
 
-    <!-- MAIN -->
+                <span class="sidebar-icon">⌂</span>
 
-    <main class="container">
+                Dashboard
 
+            </a>
 
-        <!-- PAGE INTRO -->
-
-        <section class="intro-card">
-
-            <div class="intro-text">
-
-                <span>
-                    COUNSELLING CONTROL
-                </span>
-
-                <h2>
-                    Round Configuration
-                </h2>
-
-                <p>
-                    Configure the number of counselling rounds
-                    and assign rank ranges to each round.
-                </p>
-
-            </div>
+        </div>
 
 
-            <div class="status-card">
+        <div class="sidebar-section">
 
-                <span>
-                    COUNSELLING STATUS
-                </span>
+            <p class="sidebar-label">
+                CONTROL
+            </p>
 
-                <strong>
-                    ● ACTIVE
-                </strong>
+            <a href="#" class="sidebar-link">
 
-            </div>
+                <span class="sidebar-icon">◉</span>
 
-        </section>
+                Student Monitoring
+
+            </a>
+
+            <a href="#" class="sidebar-link">
+
+                <span class="sidebar-icon">▣</span>
+
+                Allotment
+
+            </a>
+
+        </div>
 
 
+        <div class="sidebar-bottom">
 
-        <!-- ROUND SETTINGS -->
+            <div class="sidebar-user">
 
-        <section class="settings-card">
-
-
-            <div class="section-title">
+                <div class="user-circle">
+                    C
+                </div>
 
                 <div>
 
-                    <h3>
-                        Round Settings
-                    </h3>
+                    <strong>
+                        Counsellor
+                    </strong>
 
-                    <p>
-                        Decide how many students should be covered
-                        in each counselling round.
-                    </p>
+                    <span>
+                        Academic Support Cell
+                    </span>
 
                 </div>
 
             </div>
 
 
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton">
 
-            <!-- NUMBER OF ROUNDS -->
+                Logout
 
-            <div class="round-count">
+            </button>
 
-                <label for="numberOfRounds">
-                    NUMBER OF ROUNDS
-                </label>
+        </div>
 
-                <div class="count-row">
+    </aside>
 
-                    <input
-                        type="number"
-                        id="numberOfRounds"
-                        min="1"
-                        max="20"
-                        value="5">
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <div class="main-area">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    Counselling / Round Management
+                </p>
+
+                <h1>
+                    Counselling Round Management
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-status">
+
+                <span class="status-dot"></span>
+
+                Counselling System Active
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="content">
+
+
+            <!-- =================================================
+                 PAGE INTRO
+            ================================================== -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <span class="eyebrow">
+                        COUNSELLING CONTROL
+                    </span>
+
+                    <h2>
+                        Manage counselling rounds
+                    </h2>
+
+                    <p>
+                        Configure rank ranges, control choice filling,
+                        manage allotment stages and monitor the complete
+                        counselling cycle.
+                    </p>
+
+                </div>
+
+
+                <div class="system-state">
+
+                    <span>
+                        SYSTEM STATUS
+                    </span>
+
+                    <strong id="overallStatus">
+                        ● ACTIVE
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CURRENT ROUND STATS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        R
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CURRENT ROUND
+                        </span>
+
+                        <strong id="currentRoundNumber">
+                            ROUND 01
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        #
+                    </div>
+
+                    <div>
+
+                        <span>
+                            ACTIVE RANK RANGE
+                        </span>
+
+                        <strong id="currentRoundDescription">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>
+                            ROUND STATUS
+                        </span>
+
+                        <strong id="currentRoundStatus">
+                            LOADING
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ROUND CONFIGURATION
+            ================================================== -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CONFIGURATION
+                        </span>
+
+                        <h3>
+                            Round Settings
+                        </h3>
+
+                        <p>
+                            Define the rank range covered by each
+                            counselling round.
+                        </p>
+
+                    </div>
+
+
+                    <div class="round-counter">
+
+                        <span>
+                            TOTAL ROUNDS
+                        </span>
+
+                        <strong id="displayRoundCount">
+                            5
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NUMBER OF ROUNDS -->
+
+                <div class="round-generator">
+
+                    <div>
+
+                        <label for="numberOfRounds">
+                            Number of rounds
+                        </label>
+
+                        <input
+                            type="number"
+                            id="numberOfRounds"
+                            min="1"
+                            max="20"
+                            value="5">
+
+                    </div>
+
 
                     <button
                         type="button"
                         id="generateRoundsButton">
 
-                        GENERATE ROUNDS
+                        Generate Rounds
 
                     </button>
 
                 </div>
 
-            </div>
 
 
+                <!-- ROUND LIST -->
 
-            <!-- ROUND LIST -->
-
-            <div
-                id="roundContainer"
-                class="round-container">
-
-
-                <!-- ROUND 1 -->
-
-                <div class="round-card">
-
-                    <div class="round-number">
-                        ROUND 01
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="1">
-
-                    </div>
-
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="100">
-
-                    </div>
-
-
-                    <div id="roundContainer" class="round-container">
-</div>
+                <div
+                    id="roundContainer"
+                    class="round-list">
 
                 </div>
 
 
 
-                <!-- ROUND 2 -->
+                <div class="panel-footer">
 
-                <div class="round-card">
+                    <span id="saveMessage">
+                    </span>
 
-                    <div class="round-number">
-                        ROUND 02
-                    </div>
+                    <button
+                        type="button"
+                        id="saveRoundsButton"
+                        class="primary-button">
 
+                        Save Round Settings
 
-                    <div class="rank-input">
-
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="101">
-
-                    </div>
-
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="200">
-
-                    </div>
-
-
-                    <div id="roundContainer" class="round-container">
-</div>
-                </div>
-
-
-
-                <!-- ROUND 3 -->
-
-                <div class="round-card">
-
-                    <div class="round-number">
-                        ROUND 03
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="201">
-
-                    </div>
-
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="300">
-
-                    </div>
-
-
-                    <div id="roundContainer" class="round-container">
-</div>
+                    </button>
 
                 </div>
 
+            </section>
 
 
-                <!-- ROUND 4 -->
 
-                <div class="round-card">
+            <!-- =================================================
+                 ROUND CONTROL PANEL
+            ================================================== -->
 
-                    <div class="round-number">
-                        ROUND 04
-                    </div>
+            <section class="panel control-panel">
 
+                <div class="panel-header">
 
-                    <div class="rank-input">
+                    <div>
 
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="301">
-
-                    </div>
-
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="400">
-
-                    </div>
-
-
-                  <div id="roundContainer" class="round-container">
-</div>
-                </div>
-
-
-
-                <!-- ROUND 5 -->
-
-                <div class="round-card">
-
-                    <div class="round-number">
-                        ROUND 05
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="401">
-
-                    </div>
-
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="500">
-
-                    </div>
-
-
-                    <div id="roundContainer" class="round-container">
-                    </div>
-</div>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- SAVE -->
-
-            <div class="save-area">
-
-                <p id="saveMessage"></p>
-
-                <button
-                    type="button"
-                    id="saveRoundsButton"
-                    class="save-button">
-
-                    SAVE ROUND SETTINGS
-
-                </button>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- CURRENT ROUND -->
-
-        <section class="current-round-card">
-
-            <div>
-
-                <span>
-                    CURRENTLY ACTIVE ROUND
-                </span>
-
-                <h2>
-                    ROUND 01
-                </h2>
-
-                <p>
-                    Students with ranks 1–100
-                    are currently being processed.
-                </p>
-
-            </div>
-
-
-            <div class="current-status">
-
-                <span>
-                    ● LIVE
-                </span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- STUDENT INFORMATION -->
-
-        <section class="info-card">
-
-            <div class="info-icon">
-                i
-            </div>
-
-            <div>
-
-                <h3>
-                    How Round Assignment Works
-                </h3>
-
-                <p>
-                    A student's counselling round is automatically
-                    determined from their rank. Students cannot
-                    select or change their own round.
-                </p>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <script>
-
-        const numberOfRounds =
-            document.getElementById("numberOfRounds");
-
-        const generateButton =
-            document.getElementById("generateRoundsButton");
-
-        const roundContainer =
-            document.getElementById("roundContainer");
-
-        const saveButton =
-            document.getElementById("saveRoundsButton");
-
-        const saveMessage =
-            document.getElementById("saveMessage");
-
-
-        generateButton.addEventListener("click", function () {
-
-            const count =
-                parseInt(numberOfRounds.value);
-
-            if (!count || count < 1) {
-                return;
-            }
-
-            roundContainer.innerHTML = "";
-
-            let startRank = 1;
-
-            const studentsPerRound = 100;
-
-
-            for (let i = 1; i <= count; i++) {
-
-                const endRank =
-                    startRank + studentsPerRound - 1;
-
-
-                const card =
-                    document.createElement("div");
-
-                card.className = "round-card";
-
-
-                card.innerHTML = `
-
-                    <div class="round-number">
-                        ROUND ${String(i).padStart(2, "0")}
-                    </div>
-
-                    <div class="rank-input">
-
-                        <label>
-                            FROM RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="${startRank}">
-
-                    </div>
-
-                    <div class="arrow">
-                        →
-                    </div>
-
-                    <div class="rank-input">
-
-                        <label>
-                            TO RANK
-                        </label>
-
-                        <input
-                            type="number"
-                            min="1"
-                            value="${endRank}">
-
-                    </div>
-
-                    <div class="student-count">
-
-                        <span>
-                            STUDENTS
+                        <span class="eyebrow">
+                            LIVE CONTROL
                         </span>
 
-                        <strong>
-                            ${studentsPerRound}
-                        </strong>
+                        <h3>
+                            Counselling Round Control
+                        </h3>
+
+                        <p>
+                            The counsellor controls when students
+                            can fill choices and when the round
+                            progresses to allotment and payment.
+                        </p>
 
                     </div>
 
-                `;
+                </div>
 
 
-                roundContainer.appendChild(card);
+
+                <!-- ROUND SELECT -->
+
+                <div class="selector-area">
+
+                    <label for="controlRoundSelect">
+                        Select counselling round
+                    </label>
+
+                    <select id="controlRoundSelect">
+
+                        <option value="">
+                            Select a counselling round
+                        </option>
+
+                    </select>
+
+                </div>
 
 
-                startRank = endRank + 1;
 
-            }
+                <!-- SELECTED ROUND -->
 
-        });
+                <div class="selected-round">
+
+                    <div class="selected-heading">
+
+                        <div>
+
+                            <span>
+                                SELECTED ROUND
+                            </span>
+
+                            <h4 id="selectedRoundNumber">
+                                -
+                            </h4>
+
+                        </div>
+
+                        <div class="selected-status">
+                            <span id="selectedChoiceStatus">
+                                -
+                            </span>
+                        </div>
+
+                    </div>
 
 
-        saveButton.addEventListener("click", function () {
+                    <div class="round-summary">
 
-            saveMessage.textContent =
-                "✓ Round settings saved successfully.";
+                        <div>
 
-        });
+                            <span>
+                                ELIGIBLE RANK
+                            </span>
 
-    </script>
+                            <strong id="selectedRoundRank">
+                                -
+                            </strong>
 
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                ROUND STATUS
+                            </span>
+
+                            <strong id="selectedRoundStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                CHOICE FILLING
+                            </span>
+
+                            <strong id="selectedChoiceStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SCHEDULE
+                ================================================== -->
+
+                <div class="schedule-section">
+
+                    <div class="schedule-title">
+
+                        <h4>
+                            Schedule
+                        </h4>
+
+                        <p>
+                            Set the important dates and times for
+                            this counselling round.
+                        </p>
+
+                    </div>
+
+
+                    <div class="schedule-grid">
+
+
+                        <div class="schedule-item">
+
+                            <label for="preferenceStart">
+                                Choice Filling Opens
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="preferenceStart">
+
+                        </div>
+
+
+                        <div class="schedule-item">
+
+                            <label for="preferenceEnd">
+                                Choice Filling Closes
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="preferenceEnd">
+
+                        </div>
+
+
+                        <div class="schedule-item">
+
+                            <label for="allotmentAt">
+                                Allotment Date / Time
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="allotmentAt">
+
+                        </div>
+
+
+                        <div class="schedule-item">
+
+                            <label for="paymentDeadline">
+                                Payment Deadline
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="paymentDeadline">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ACTIONS
+                ================================================== -->
+
+                <div class="action-section">
+
+                    <div class="action-title">
+
+                        <h4>
+                            Round Actions
+                        </h4>
+
+                        <p>
+                            Move the selected round through its
+                            counselling stages.
+                        </p>
+
+                    </div>
+
+
+                    <div class="action-grid">
+
+
+                        <button
+                            type="button"
+                            id="updateRoundSettingsButton"
+                            class="action-button settings-action">
+
+                            <span>01</span>
+
+                            Save Settings
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="openChoiceFillingButton"
+                            class="action-button open-action">
+
+                            <span>02</span>
+
+                            Open Choice Filling
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="lockChoiceFillingButton"
+                            class="action-button lock-action">
+
+                            <span>03</span>
+
+                            🔒 Lock Choice Filling
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="allotmentCompletedButton"
+                            class="action-button allotment-action">
+
+                            <span>04</span>
+
+                            Mark Allotment Completed
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="paymentPeriodButton"
+                            class="action-button payment-action">
+
+                            <span>05</span>
+
+                            Start Payment Period
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="completeRoundButton"
+                            class="action-button complete-action">
+
+                            <span>06</span>
+
+                            Complete Round
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="controlMessage"
+                    class="control-message">
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ROUND FLOW
+            ================================================== -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ROUND WORKFLOW
+                        </span>
+
+                        <h3>
+                            Counselling Progression
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            01
+                        </div>
+
+                        <div>
+                            <strong>
+                                Not Started
+                            </strong>
+
+                            <span>
+                                Round is configured and waiting.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            02
+                        </div>
+
+                        <div>
+                            <strong>
+                                Choice Filling Open
+                            </strong>
+
+                            <span>
+                                Eligible students can enter and
+                                modify their preferences.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            03
+                        </div>
+
+                        <div>
+                            <strong>
+                                Preferences Locked
+                            </strong>
+
+                            <span>
+                                Students can no longer modify choices.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            04
+                        </div>
+
+                        <div>
+                            <strong>
+                                Allotment Completed
+                            </strong>
+
+                            <span>
+                                Department and seat allotment is processed.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            05
+                        </div>
+
+                        <div>
+                            <strong>
+                                Payment Period
+                            </strong>
+
+                            <span>
+                                Students complete the required payment.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-number">
+                            06
+                        </div>
+
+                        <div>
+                            <strong>
+                                Completed
+                            </strong>
+
+                            <span>
+                                The counselling round is closed.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INFORMATION
+            ================================================== -->
+
+            <section class="notice">
+
+                <div class="notice-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>
+                        Important
+                    </strong>
+
+                    <p>
+                        A student's counselling round is automatically
+                        determined from their rank. Students cannot
+                        select or change their own round. The counsellor
+                        controls the complete counselling schedule.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script src="round-management.js"></script>
 
 </body>
 

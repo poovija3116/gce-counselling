@@ -2,106 +2,673 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GCE Erode - My Application</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="my-application.css">
+    <title>My Application - GCE Erode</title>
+
+    <link rel="stylesheet"
+          href="my-application.css">
+
 </head>
+
 
 <body>
 
-    <div class="page">
 
-        <!-- Header -->
-        <header class="header">
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-            <h1>GCE ERODE</h1>
+    <header class="header">
 
-            <h2>MANAGEMENT COUNSELLING 2026</h2>
+        <div class="header-left">
 
-            <p>MY APPLICATION</p>
+            <div class="college-mark">
+                GCE
+            </div>
 
-        </header>
+            <div>
 
+                <h1>
+                    GCE ERODE
+                </h1>
 
-        <!-- Application Details -->
-        <section class="application-card">
-
-            <h3>APPLICATION DETAILS</h3>
-
-            <div class="details">
-
-                <div class="detail-row">
-                    <span>Application ID</span>
-                    <strong>GCE2026XXXX</strong>
-                </div>
-
-                <div class="detail-row">
-                    <span>Application Status</span>
-                    <strong class="status">Submitted</strong>
-                </div>
+                <span>
+                    MANAGEMENT COUNSELLING 2026
+                </span>
 
             </div>
 
-        </section>
+        </div>
 
 
-        <!-- Student Details -->
-        <section class="application-card">
+        <div class="header-right">
 
-            <h3>STUDENT DETAILS</h3>
+            <span class="header-label">
+                STUDENT PORTAL
+            </span>
 
-            <div class="details">
+        </div>
 
-                <div class="detail-row">
-                    <span>Name</span>
-                    <strong>Student Name</strong>
-                </div>
+    </header>
 
-                <div class="detail-row">
-                    <span>Date of Birth</span>
-                    <strong>DD/MM/YYYY</strong>
-                </div>
 
-                <div class="detail-row">
-                    <span>Community</span>
-                    <strong>BC</strong>
-                </div>
 
-                <div class="detail-row">
-                    <span>Rank</span>
-                    <strong>XXXXX</strong>
-                </div>
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    APPLICATION
+                </span>
+
+                <h2>
+                    My Application
+                </h2>
+
+                <p>
+                    View your submitted counselling application,
+                    eligibility and current application status.
+                </p>
 
             </div>
 
-        </section>
 
+            <button id="printButton"
+                    class="print-button">
 
-        <!-- Back Button -->
-        <div class="back-container">
+                PRINT / SAVE
 
-            <button id="backButton">
-                ← BACK
             </button>
+
+        </section>
+
+
+
+        <!-- =========================================
+             APPLICATION STATUS
+        ========================================== -->
+
+        <section class="status-card">
+
+            <div class="status-main">
+
+                <div class="status-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span class="section-label">
+                        APPLICATION STATUS
+                    </span>
+
+                    <h3>
+                        Application Submitted
+                    </h3>
+
+                    <p>
+                        Your application has been successfully
+                        submitted for management counselling.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-meta">
+
+                <div>
+
+                    <span>
+                        APPLICATION NUMBER
+                    </span>
+
+                    <strong id="applicationNumber">
+                        GCE2026XXXX
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SUBMITTED ON
+                    </span>
+
+                    <strong id="submittedDate">
+                        DD/MM/YYYY
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             STUDENT INFORMATION
+        ========================================== -->
+
+        <section class="content-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        APPLICANT
+                    </span>
+
+                    <h3>
+                        Student Information
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-grid">
+
+
+                <div class="information-item">
+
+                    <span>
+                        FULL NAME
+                    </span>
+
+                    <strong id="studentName">
+                        Student Name
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        DATE OF BIRTH
+                    </span>
+
+                    <strong id="dateOfBirth">
+                        DD/MM/YYYY
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        GENDER
+                    </span>
+
+                    <strong id="gender">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        COMMUNITY
+                    </span>
+
+                    <strong id="community">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        MOBILE NUMBER
+                    </span>
+
+                    <strong id="phone">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <strong id="email">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ACADEMIC INFORMATION
+        ========================================== -->
+
+        <section class="content-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ELIGIBILITY
+                    </span>
+
+                    <h3>
+                        Academic Information
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="academic-box">
+
+
+                <div class="academic-item">
+
+                    <span>
+                        COUNSELLING RANK
+                    </span>
+
+                    <strong id="rank">
+                        XXXXX
+                    </strong>
+
+                </div>
+
+
+                <div class="academic-item">
+
+                    <span>
+                        ELIGIBILITY STATUS
+                    </span>
+
+                    <strong class="eligible">
+                        Eligible
+                    </strong>
+
+                </div>
+
+
+                <div class="academic-item">
+
+                    <span>
+                        CURRENT ROUND
+                    </span>
+
+                    <strong id="currentRound">
+                        Round 01
+                    </strong>
+
+                </div>
+
+
+                <div class="academic-item">
+
+                    <span>
+                        ELIGIBLE RANK RANGE
+                    </span>
+
+                    <strong id="rankRange">
+                        1 – 100
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             COUNSELLING STATUS
+        ========================================== -->
+
+        <section class="content-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COUNSELLING
+                    </span>
+
+                    <h3>
+                        Current Progress
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-list">
+
+
+                <div class="progress-item completed">
+
+                    <div class="progress-number">
+                        1
+                    </div>
+
+                    <div class="progress-text">
+
+                        <strong>
+                            Application Submitted
+                        </strong>
+
+                        <span>
+                            Your application has been submitted successfully.
+                        </span>
+
+                    </div>
+
+                    <div class="progress-status">
+                        COMPLETED
+                    </div>
+
+                </div>
+
+
+
+                <div class="progress-item active">
+
+                    <div class="progress-number">
+                        2
+                    </div>
+
+                    <div class="progress-text">
+
+                        <strong>
+                            Choice Filling
+                        </strong>
+
+                        <span id="choiceStatus">
+                            Check your dashboard for the current choice-filling status.
+                        </span>
+
+                    </div>
+
+                    <div class="progress-status">
+                        CURRENT
+                    </div>
+
+                </div>
+
+
+
+                <div class="progress-item">
+
+                    <div class="progress-number">
+                        3
+                    </div>
+
+                    <div class="progress-text">
+
+                        <strong>
+                            Seat Allotment
+                        </strong>
+
+                        <span>
+                            Allotment will be processed according to rank,
+                            preferences and available seats.
+                        </span>
+
+                    </div>
+
+                    <div class="progress-status">
+                        PENDING
+                    </div>
+
+                </div>
+
+
+
+                <div class="progress-item">
+
+                    <div class="progress-number">
+                        4
+                    </div>
+
+                    <div class="progress-text">
+
+                        <strong>
+                            Payment
+                        </strong>
+
+                        <span>
+                            Payment instructions will appear after allotment.
+                        </span>
+
+                    </div>
+
+                    <div class="progress-status">
+                        PENDING
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             IMPORTANT NOTE
+        ========================================== -->
+
+        <section class="notice">
+
+            <div class="notice-icon">
+                i
+            </div>
+
+            <div>
+
+                <strong>
+                    Keep your application details safe
+                </strong>
+
+                <p>
+                    Your application number is required for
+                    future counselling-related communication.
+                    Do not share your login credentials with others.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ERROR REPORT
+        ========================================== -->
+
+        <section class="error-card">
+
+            <div>
+
+                <span class="section-label">
+                    NEED HELP?
+                </span>
+
+                <h3>
+                    Found an error in your application?
+                </h3>
+
+                <p>
+                    If any personal, academic or application information
+                    is incorrect, report it to the Academic Support Cell.
+                </p>
+
+            </div>
+
+
+            <button id="reportErrorButton"
+                    class="error-button">
+
+                REPORT AN ERROR
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================================
+             BOTTOM ACTIONS
+        ========================================== -->
+
+        <div class="bottom-actions">
+
+            <button id="backButton"
+                    class="back-button">
+
+                ← BACK TO DASHBOARD
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         ERROR MODAL
+    ========================================== -->
+
+    <div id="errorModal"
+         class="modal-overlay">
+
+        <div class="modal">
+
+            <button id="closeModal"
+                    class="close-button">
+
+                ×
+
+            </button>
+
+
+            <span class="section-label">
+                APPLICATION SUPPORT
+            </span>
+
+            <h3>
+                Report an Application Error
+            </h3>
+
+            <p>
+                Select the information that needs correction
+                and describe the problem clearly.
+            </p>
+
+
+            <label for="errorType">
+                INFORMATION TYPE
+            </label>
+
+            <select id="errorType">
+
+                <option value="">
+                    Select
+                </option>
+
+                <option>
+                    Personal Information
+                </option>
+
+                <option>
+                    Academic Information
+                </option>
+
+                <option>
+                    Community Information
+                </option>
+
+                <option>
+                    Rank / Eligibility
+                </option>
+
+                <option>
+                    Application Information
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+
+            <label for="errorDescription">
+                DESCRIPTION
+            </label>
+
+            <textarea id="errorDescription"
+                      rows="5"
+                      placeholder="Describe the error..."></textarea>
+
+
+            <button id="submitError"
+                    class="submit-error">
+
+                SUBMIT ERROR REPORT
+
+            </button>
+
+
+            <p id="errorMessage"
+               class="error-message"></p>
 
         </div>
 
     </div>
 
 
-    <!-- Internal JavaScript -->
-    <script>
-
-        document.getElementById("backButton").addEventListener("click", function () {
-
-            history.back();
-
-        });
-
-    </script>
 
 </body>
 
