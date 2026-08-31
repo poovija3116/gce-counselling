@@ -6,141 +6,450 @@ const pool = require("../config/db");
 
 const router = express.Router();
 
-// ===============================
+
+// ============================================================
+// GCE ERODE - AUTHENTICATION ROUTES
+// ============================================================
+
+
+// ============================================================
 // LOGIN
-// ===============================
+// ============================================================
 
 router.post("/login", async (req, res) => {
+
     try {
+
         const { email, password } = req.body;
 
+
+        // ----------------------------------------------------
+        // VALIDATE INPUT
+        // ----------------------------------------------------
+
         if (!email || !password) {
+
             return res.status(400).json({
+
                 success: false,
-                message: "Email and password are required"
+
+                message:
+                    "Email and password are required"
+
             });
+
         }
+
+
+        // ----------------------------------------------------
+        // FIND USER
+        // ----------------------------------------------------
 
         const [users] = await pool.execute(
-            "SELECT * FROM users WHERE email = ?",
-            [email]
+            `
+            SELECT
+                id,
+                name,
+                email,
+                password,
+                role
+            FROM users
+            WHERE email = ?
+            LIMIT 1
+            `,
+            [email.trim()]
         );
 
+
         if (users.length === 0) {
+
             return res.status(401).json({
+
                 success: false,
-                message: "Invalid email or password"
+
+                message:
+                    "Invalid email or password"
+
             });
+
         }
+
 
         const user = users[0];
 
-        const passwordMatch = await bcrypt.compare(
-            password,
-            user.password
-        );
+
+        // ----------------------------------------------------
+        // CHECK PASSWORD
+        // ----------------------------------------------------
+
+        const passwordMatch =
+            await bcrypt.compare(
+                password,
+                user.password
+            );
+
 
         if (!passwordMatch) {
+
             return res.status(401).json({
+
                 success: false,
-                message: "Invalid email or password"
+
+                message:
+                    "Invalid email or password"
+
             });
+
         }
 
-        const token = jwt.sign(
+
+        // ----------------------------------------------------
+        // NORMALIZE ROLE
+        //
+        // Example:
+        // "Counsellor" -> "counsellor"
+        // "COUNSELLOR" -> "counsellor"
+        // ----------------------------------------------------
+
+        const normalizedRole =
+            String(
+                user.role || ""
+            )
+            .trim()
+            .toLowerCase();
+
+
+        // ----------------------------------------------------
+        // CHECK ROLE
+        // ----------------------------------------------------
+
+        const allowedRoles = [
+            "student",
+            "counsellor",
+            "admin"
+        ];
+
+
+        if (
+            !allowedRoles.includes(
+                normalizedRole
+            )
+        ) {
+
+            console.error(
+                "❌ INVALID USER ROLE:",
+                user.role
+            );
+
+
+            return res.status(403).json({
+
+                success: false,
+
+                message:
+                    "Invalid user role configured in database",
+
+                role:
+                    user.role
+
+            });
+
+        }
+
+
+        // ----------------------------------------------------
+        // CHECK JWT SECRET
+        // ----------------------------------------------------
+
+        if (!process.env.JWT_SECRET) {
+
+            console.error(
+                "❌ JWT_SECRET is missing"
+            );
+
+
+            return res.status(500).json({
+
+                success: false,
+
+                message:
+                    "Server authentication configuration error"
+
+            });
+
+        }
+
+
+        // ----------------------------------------------------
+        // CREATE JWT
+        // ----------------------------------------------------
+
+        const token =
+            jwt.sign(
+
+                {
+                    id: user.id,
+
+                    role:
+                        normalizedRole,
+
+                    email:
+                        user.email
+
+                },
+
+                process.env.JWT_SECRET,
+
+                {
+                    expiresIn: "1d"
+                }
+
+            );
+
+
+        // ----------------------------------------------------
+        // LOG LOGIN INFORMATION
+        // ----------------------------------------------------
+
+        console.log(
+            "✅ LOGIN SUCCESS:",
             {
                 id: user.id,
-                role: user.role,
-                email: user.email
-            },
-            process.env.JWT_SECRET,
-            {
-                expiresIn: "1d"
+                email: user.email,
+                role: normalizedRole
             }
         );
 
-        res.json({
+
+        // ----------------------------------------------------
+        // SEND RESPONSE
+        // ----------------------------------------------------
+
+        return res.json({
+
             success: true,
-            message: "Login successful",
+
+            message:
+                "Login successful",
+
             token,
+
             user: {
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                role: user.role
+
+                id:
+                    user.id,
+
+                name:
+                    user.name,
+
+                email:
+                    user.email,
+
+                role:
+                    normalizedRole
+
             }
+
         });
 
-    } catch (error) {
-        console.error("LOGIN ERROR:", error);
-
-        res.status(500).json({
-            success: false,
-            message: "Login failed",
-            error: error.message
-        });
     }
+
+    catch (error) {
+
+        console.error(
+            "LOGIN ERROR:",
+            error
+        );
+
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Login failed",
+
+            error:
+                error.message
+
+        });
+
+    }
+
 });
 
-// ===============================
+
+
+// ============================================================
 // REGISTER
-// ===============================
+// ============================================================
 
 router.post("/register", async (req, res) => {
+
     try {
-        const { name, email, password } = req.body;
 
-        // Check required fields
-        if (!name || !email || !password) {
+        const {
+            name,
+            email,
+            password
+        } = req.body;
+
+
+        // ----------------------------------------------------
+        // VALIDATE INPUT
+        // ----------------------------------------------------
+
+        if (
+            !name ||
+            !email ||
+            !password
+        ) {
+
             return res.status(400).json({
+
                 success: false,
-                message: "Name, email and password are required"
+
+                message:
+                    "Name, email and password are required"
+
             });
+
         }
 
-        // Check whether email already exists
-        const [existingUsers] = await pool.execute(
-            "SELECT id FROM users WHERE email = ?",
-            [email]
-        );
 
-        if (existingUsers.length > 0) {
+        // ----------------------------------------------------
+        // CHECK EMAIL
+        // ----------------------------------------------------
+
+        const [existingUsers] =
+            await pool.execute(
+                `
+                SELECT id
+                FROM users
+                WHERE email = ?
+                LIMIT 1
+                `,
+                [email.trim()]
+            );
+
+
+        if (
+            existingUsers.length > 0
+        ) {
+
             return res.status(409).json({
+
                 success: false,
-                message: "Email already registered"
+
+                message:
+                    "Email already registered"
+
             });
+
         }
 
-        // Hash password
-        const passwordHash = await bcrypt.hash(password, 10);
 
-        // Create student account
-        const [result] = await pool.execute(
-            `INSERT INTO users
-            (name, email, password, role)
-            VALUES (?, ?, ?, ?)`,
-            [name, email, passwordHash, "student"]
+        // ----------------------------------------------------
+        // HASH PASSWORD
+        // ----------------------------------------------------
+
+        const passwordHash =
+            await bcrypt.hash(
+                password,
+                10
+            );
+
+
+        // ----------------------------------------------------
+        // CREATE STUDENT
+        // ----------------------------------------------------
+
+        const [result] =
+            await pool.execute(
+                `
+                INSERT INTO users
+                (
+                    name,
+                    email,
+                    password,
+                    role
+                )
+                VALUES (?, ?, ?, ?)
+                `,
+                [
+                    name.trim(),
+                    email.trim(),
+                    passwordHash,
+                    "student"
+                ]
+            );
+
+
+        // ----------------------------------------------------
+        // RESPONSE
+        // ----------------------------------------------------
+
+        return res.status(201).json({
+
+            success: true,
+
+            message:
+                "Registration successful",
+
+            userId:
+                result.insertId
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "REGISTER ERROR:",
+            error
         );
 
-        res.status(201).json({
-            success: true,
-            message: "Registration successful",
-            userId: result.insertId
-        });
 
-    } catch (error) {
-        console.error("REGISTER ERROR:", error);
+        return res.status(500).json({
 
-        res.status(500).json({
             success: false,
-            message: "Registration failed",
-            error: error.message
+
+            message:
+                "Registration failed",
+
+            error:
+                error.message
+
         });
+
     }
+
 });
 
-// ===============================
-// EXPORT ROUTER
-// ===============================
+
+
+// ============================================================
+// TEST AUTH ROUTE
+// ============================================================
+
+router.get("/test", (req, res) => {
+
+    res.json({
+
+        success: true,
+
+        message:
+            "Auth route is working"
+
+    });
+
+});
+
+
+
+// ============================================================
+// EXPORT
+// ============================================================
 
 module.exports = router;
