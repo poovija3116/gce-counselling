@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   // 'student', 'admin', 'counsellor'
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  student   Student?
+}
+
+model Student {
+  id            Int      @id @default(autoincrement())
+  userId        Int      @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  phone         String?
+  dateOfBirth   DateTime?
+  gender        String?
+  community     String?
+  address       String?
+  cutoffMark    Float?
+  rankNumber    Int?
+  applications  Application[]
+  allotments    Allotment[]
+  payments      Payment[]
+  preferences   Preference[]
+}
+
+model Application {
+  id                Int      @id @default(autoincrement())
+  studentId         Int
+  student           Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  applicationNumber String   @unique
+  status            String   // 'pending', 'approved', 'rejected'
+  createdAt         DateTime @default(now())
+}
+
+model Department {
+  id             Int      @id @default(autoincrement())
+  code           String   @unique
+  name           String
+  totalSeats     Int
+  availableSeats Int
+  createdAt      DateTime @default(now())
+  allotments     Allotment[]
+  preferences    Preference[]
+}
+
+model CounsellingRound {
+  id          Int      @id @default(autoincrement())
+  roundNumber Int      @unique
+  minRank     Int
+  maxRank     Int
+  status      String   // 'not_started', 'in_progress', 'completed'
+  allotments  Allotment[]
+  preferences Preference[]
+}
+
+model Allotment {
+  id              Int      @id @default(autoincrement())
+  studentId       Int
+  student         Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  departmentId    Int
+  department      Department @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  seatNumber      String
+  status          String   // 'allotted', 'payment_pending', 'confirmed', 'cancelled'
+  roundId         Int
+  round           CounsellingRound @relation(fields: [roundId], references: [id], onDelete: Restrict)
+  studentDecision String?  // 'pending', 'accepted', 'rejected'
+  createdAt       DateTime @default(now())
+  payments        Payment[]
+}
+
+model Payment {
+  id            Int      @id @default(autoincrement())
+  studentId     Int
+  student       Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  allotmentId   Int
+  allotment     Allotment @relation(fields: [allotmentId], references: [id], onDelete: Cascade)
+  amount        Float
+  paymentStatus String   // 'pending', 'completed', 'failed'
+  paymentMode   String?
+  transactionId String?
+  createdAt     DateTime @default(now())
+}
+
+model Preference {
+  id            Int      @id @default(autoincrement())
+  studentId     Int
+  student       Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  departmentId  Int
+  department    Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  priority      Int
+  roundId       Int
+  round         CounsellingRound @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  isLocked      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
